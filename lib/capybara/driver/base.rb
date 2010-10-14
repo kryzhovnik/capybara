@@ -19,6 +19,10 @@ class Capybara::Driver::Base
     raise NotImplementedError
   end
 
+  def drag_by(right_by, down_by)
+    raise NotImplementedError
+  end
+
   def execute_script(script)
     raise Capybara::NotSupportedByDriverError
   end

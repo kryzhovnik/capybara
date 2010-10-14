@@ -50,6 +50,10 @@ class Capybara::Driver::Selenium < Capybara::Driver::Base
       native.click
     end
 
+    def drag_by(right_by, down_by)
+      native.drag_and_drop_by(right_by, down_by)
+    end
+
     def drag_to(element)
       native.drag_and_drop_on(element.native)
     end

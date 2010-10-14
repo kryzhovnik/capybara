@@ -186,6 +186,19 @@ module Capybara
 
     ##
     #
+    # Drag and drop this element
+    #
+    # @param [Integer] right_by
+    #   number of pixels to drag right
+    # @param [Integer] down_by
+    #   number of pixels to drag down
+    #
+    def drag_by(right_by, down_by)
+      base.drag_by(right_by, down_by)
+    end
+
+    ##
+    #
     # Drag the element to the given other element.
     #
     #     source = page.find('#foo')

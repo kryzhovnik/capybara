@@ -93,6 +93,15 @@ shared_examples_for "driver with javascript support" do
     end
   end
 
+  describe '#drag_by' do
+    it "should drag and drop an object by pixels right and down" do
+      pending "drag/drop is currently broken under celerity/culerity" if @driver.is_a?(Capybara::Driver::Celerity)
+      draggable = @driver.find('//div[@id="drag"]').first
+      draggable.drag_by(0, 40)
+      @driver.find('//div[contains(., "Dropped!")]').should_not be_empty
+    end
+  end
+
   describe "#evaluate_script" do
     it "should return the value of the executed script" do
       @driver.evaluate_script('1+1').should == 2
